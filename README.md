@@ -3,17 +3,21 @@
 This code repository hosts the examples used in the following [The New Stack](http://thenewstack.io/make-a-restful-json-api-go/) article.
 
 
-## Running Examples
+## Setup
 
-To run examples, from the root of this project (change the version as needed):
 
-```sh
-# Run example 1
-go run ./v1/*.go
+
+## Execution
+
+To run the example game ...
+
+``` The webpage 
+# Run webpage
+go run ./webPage/webpage.go
 ```
 
-```sh
-# Run example 2
-go run ./v2/*.go
+``` The Rest Service
+# Run Rest Service
+go run ./TBD/*.go
 ```
 

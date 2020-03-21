@@ -8,8 +8,6 @@ import (
 
 func main() {
 
-
-
 	fmt.Println("Starting the application...")
 	http.Handle("/", http.FileServer(http.Dir("./webPage")))
 	

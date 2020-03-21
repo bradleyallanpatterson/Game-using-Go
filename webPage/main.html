@@ -20,7 +20,7 @@
       style="width:300px"
       type="text"
       id="rootUrl"
-      value="http://localhost"
+      value="https://codechallenge.boohma.com"
     />
 	
     </br>
@@ -86,7 +86,7 @@
 
     function getChoices() {
       $.get({
-        url: "https://codechallenge.boohma.com/choices",
+        url: rootUrl() + "/choices",
         success: function(result) {
           console.log(result);
           createChoices(result);

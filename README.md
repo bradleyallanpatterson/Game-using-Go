@@ -18,6 +18,14 @@ go run ./webPage/webpage.go
 
 ``` The Rest Service
 # Run Rest Service
-go run ./TBD/*.go
+# note cannot get go run ./*.go to work
+go run ./main.go ./router.go ./logger.go ./routes.go ./handlers.go
 ```
+
+## Resources
+
+
+Go Documentation - https://golang.org/pkg/
+Serve web pages - https://tutorialedge.net/golang/creating-simple-web-server-with-golang/
+
 

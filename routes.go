@@ -36,5 +36,11 @@ var routes = Routes{
 		"/choices",
 		choices,
 	},
-
+	Route{
+		"play",
+		"POST",
+		"/play",
+		play,
+	},
+	
 }

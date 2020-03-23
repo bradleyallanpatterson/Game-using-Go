@@ -15,28 +15,18 @@
     <p>
       RPSLS clone page.
     </p>
-    <H3>Step 1: Put your root URL here</H3>
-    <input
-      style="width:300px"
-      type="text"
-      id="rootUrl"
-      value="https://codechallenge.boohma.com"
-    />
+
 	
     </br>
-    <H3>Step 2: Populate choices from the /choices endpoint</H3>
-    <button onclick="getChoices()">
-      Click me!
+	<button onclick="playRock()">
+      rock
     </button>
-    <div id="choices">
-      <ul id="choicesList"></ul>
-    </div>
     
 	
 	
 	</br>
     <H3
-      >Step 3: Click an above choice to play against the computer with the /play
+      >Click an above choice to play against the computer with the /play
       endpoint</H3>
     <div id="results"></div>
 
@@ -76,7 +66,7 @@
 
     function getChoice() {
       $.get({
-        url: rootUrl() + "/choice",
+        url: "http://localhost:8888/choice",
         success: function(result) {
           console.log(result);
           $("#choiceTag").text(result.name);
@@ -86,10 +76,35 @@
 
     function getChoices() {
       $.get({
-        url: rootUrl() + "/choices",
+        url: "http://localhost:8888/choices",
         success: function(result) {
           console.log(result);
           createChoices(result);
+        }
+      });
+    }
+	
+	function playRock() {
+      $.ajax({
+        url: "http://localhost:8888/playAsRock",
+        type: "POST",
+        data: `{"player":` + id + `}`,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data, status) {
+          if (status === "success") {
+            console.log("computer played with " + data.computer);
+            $("#results").text(
+              "You played " +
+                choices[data.player] +
+                " & the computer played " +
+                choices[data.computer] +
+                ". You " +
+                data.results
+            );
+          } else {
+            alert(status);
+          }
         }
       });
     }
@@ -98,7 +113,7 @@
       console.log("played with " + id);
 
       $.ajax({
-        url: rootUrl() + "/play",
+        url: "http://localhost:8888/play",
         type: "POST",
         data: `{"player":` + id + `}`,
         contentType: "application/json; charset=utf-8",

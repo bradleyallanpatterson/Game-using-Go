@@ -1,11 +1,12 @@
 # Simple Rock Paper Scissors game clone using Go
 
-This code repository hosts the examples used in the following [The New Stack](http://thenewstack.io/make-a-restful-json-api-go/) article.
+This code repository hosts my first look at using the Go programming language.
 
 
 ## Setup
 
-must type the following:
+Assuming that Go is installed from https://golang.org/
+Must type the following from command line:
 
 go get
 go get -u github.com/tidwall/gjson

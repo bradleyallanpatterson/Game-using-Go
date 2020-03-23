@@ -5,6 +5,10 @@ This code repository hosts the examples used in the following [The New Stack](ht
 
 ## Setup
 
+must type the following:
+
+go get
+go get -u github.com/tidwall/gjson
 
 
 ## Execution
@@ -24,8 +28,7 @@ go run ./main.go ./router.go ./logger.go ./routes.go ./handlers.go
 
 ## Resources
 
-
 Go Documentation - https://golang.org/pkg/
 Serve web pages - https://tutorialedge.net/golang/creating-simple-web-server-with-golang/
-
+gjson - https://github.com/tidwall/gjson 
 
